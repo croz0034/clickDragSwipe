@@ -1,5 +1,7 @@
 let dropSections = [1,2,3]
-let playerList = ["Tryel", "Kronos", ""];
+let playerList = ["Tryel", "Kronos"];
+let screenwidth = window.innerWidth
+console.log(screenwidth)
 
 
 
@@ -9,10 +11,22 @@ init = ()=>{
     playerList.forEach((player)=>{NewDragable(player)})
    
  document.getElementById("Confirm").addEventListener("click", AddPlayer)
-     
+    
+document.getElementById("Status").addEventListener("click", StatusReport)
     
      SwipeFun(document.getElementById("FUN"));
      
+}
+
+let StatusReport = (ev)=>{
+    ev.preventDefault();
+    let TargetPoint = document.getElementById("zoneStatus");
+    let Col1 = document.getElementById('1').querySelectorAll(".card").length;
+    let Col2 = document.getElementById('2').querySelectorAll(".card").length;
+    let Col3 = document.getElementById('3').querySelectorAll(".card").length;
+    
+    TargetPoint.textContent = `Column1: ${Col1} Column2: ${Col2} Column3: ${Col3}`
+    
 }
 
 let SwipeFun = (elementTargeted)=>{
@@ -22,18 +36,19 @@ let SwipeFun = (elementTargeted)=>{
         ThreshHold = ev.screenX;
         console.log(ev.screenX)
     };
+    elementTargeted.addEventListener('click', ()=>{ elementTargeted.textContent = `FUN`})
     
     elementTargeted.ondrag = (ev)=>{ (ev.screenX > 0) ? Current = ev.screenX : console.log("done")}
     
      elementTargeted.ondragend= (ev) => {
          console.log(ThreshHold, Current)
-         if(ev.screenX > (ThreshHold + 50)){
-              elementTargeted.textContent =`Right`
+         if(ev.screenX > (ThreshHold + 100)){
+              elementTargeted.textContent =`Right!`
          }
-         else if(ev.screenX < (ThreshHold - 50)){
+         else if(ev.screenX < (ThreshHold - 100)){
              elementTargeted.textContent = `Left!`
              
-         } else { elementTargeted.textContent = `FUN`}
+         } 
      }
 }
 
