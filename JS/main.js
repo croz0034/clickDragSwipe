@@ -1,4 +1,9 @@
-let dropSections = [1,2,3]
+let TylerClasses = {
+    dropSections: { DashBoard : []},
+    dragItems: {DashBoard: [] }
+}
+
+let dropSections = []
 let playerList = ["Tryel", "Kronos"];
 let screenwidth = window.innerWidth
 console.log(screenwidth)
@@ -6,7 +11,8 @@ console.log(screenwidth)
 
 
 init = ()=>{
-    dropSections.forEach((zone)=>{ Dropzones(zone) })
+    ArrayBuilders("dropSections")
+    TylerClasses.dropSections.DashBoard.forEach((zone)=>{ Dropzones(zone) })
     
     playerList.forEach((player)=>{NewDragable(player)})
    
@@ -16,6 +22,18 @@ document.getElementById("Status").addEventListener("click", StatusReport)
     
      SwipeFun(document.getElementById("FUN"));
      
+}
+
+ArrayBuilders = (itemToFind)=>{
+    
+    let dropzones = document.getElementById(itemToFind).children;
+    console.log(dropzones);
+    
+    for(let i = 0; i<(dropzones.length); i++){
+        TylerClasses[itemToFind].DashBoard.push(dropzones[i].id)
+    console.log(dropzones[i].id)
+    }
+    
 }
 
 let StatusReport = (ev)=>{
