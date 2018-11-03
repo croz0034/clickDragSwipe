@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+/*    overflow: hidden;*/
+}
+
+.dropZone {
+    float: left;
+    min-width: 33%;
+    min-height: 100%;
+    max-height: 100%;
+    border: 1px solid black;
+}
+.page{
+    margin-top: 3%;
+    min-height: 96%;
+    max-height: 96%;
+}
+.displayWindow{
+    height: 14rem;
+    border: 1px solid black;
+    min-width: 100%;
+    
+}
+.zoneTetheredDrag {
+text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid lightgrey;
+    background: white;
+    overflow: visible;
+}
+
+.swipeCard, .draggable {
+    position: absolute;
+    min-width: 33%;
+    margin: 1rem;
+    margin-left: 33%;
+    height: 10rem;
+    text-align: center;
+    border: 5px outset black;
+    border-radius: 1rem;
+
+}
+
+.draggable {
+    position: fixed;
+    margin: 0;
+}
+.EmptySpace{
+    padding: 137rem;
+}
+#hidden{
+    display: none;
+}
+
+         #nav {
+             position: fixed;
+top: 0;
+left: 0;
+right: 0;
+background: white;
+             width: 100%;
+             border-bottom: black 3px outset;
+             height: 4%;
+             display: inline;
+            text-align: center;
+         }
+         #nav > ul {
+            float: left;
+             margin-left: -2.5rem;
+             list-style-type: none
+         }
+         #nav > ul > li {
+             margin: 0;
+             height: 100%;
+             font-size: 1.25rem;
+             padding-right: 1rem;
+             padding-left: 1rem;
+             display: inline;
+             border-right: 1px solid
+         }
+.Current{
+    background-color: lightblue;
+    
+}

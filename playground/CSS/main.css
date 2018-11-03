@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+#testingBed {
+    min-width: 100%;
+    min-height: 100%;
+}
+.zone {
+    float: left;
+    min-width: 33%;
+    min-height: 100%;
+    padding-bottom: 572rem;
+    border: 1px solid black;
+    display: inline;
+}
+.card {
+text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid lightgrey;
+    background: white;
+    
+}
+#PlayerAdd > p {
+    display: inline;
+}
